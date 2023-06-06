@@ -10,7 +10,7 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *slug = NULL, *flash= NULL;
+	listint_t *slug = NULL, *flash = NULL;
 	int cycle = 0;
 
 	if (!list)
