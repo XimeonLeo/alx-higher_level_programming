@@ -39,7 +39,7 @@ class Square:
                 if isinstance(x, int) and isinstance(y, int):
                     if x >= 0 and y >= 0:
                         self.__position = value
-        except Exception as e:
+        except:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
