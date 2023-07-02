@@ -8,12 +8,12 @@ class Square:
     def __init__(self, size=0):
         """Initializing a new Square """
         self.size = size
-            
+
     @property
     def size(self):
         """Returns the current size of tne Square """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """ Setting the size of new Square """
