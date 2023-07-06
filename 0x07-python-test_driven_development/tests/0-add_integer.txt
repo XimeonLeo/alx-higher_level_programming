@@ -1,0 +1,37 @@
+MY TEST CASE FILE
+===================
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(1.4, 3)
+4
+
+>>> add_integer(float("inf"))
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float("NaN"))
+Traceback (most recent call last):
+	...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(0)
+98
+
+>>> add_integer()
+Traceback (most recent call last):
+	...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(0, 1e1000)
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(22, "bestSchool")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
