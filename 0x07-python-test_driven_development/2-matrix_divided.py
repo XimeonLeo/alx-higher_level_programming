@@ -34,4 +34,4 @@ def matrix_divided(matrix, div):
         for data in row:
             if not isinstance(data, (int, float)):
                 raise TypeError("div must be a number")
-    return [(list(map(lambda x: round(x / div, 2), row))) for row in matrix]
+    return [(list(map(lambda data: round(data / div, 2), row))) for row in matrix]
