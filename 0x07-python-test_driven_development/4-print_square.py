@@ -25,4 +25,5 @@ def print_square(size):
         if cm % size == 0 and cm != 0:
             print()
         print("#", end='')
-    print()
+    if size != 0:
+        print()
