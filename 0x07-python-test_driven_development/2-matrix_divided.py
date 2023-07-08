@@ -33,7 +33,8 @@ def matrix_divided(matrix, div):
                             "must have the same size")
         for data in row:
             if not isinstance(data, (int, float)):
-                raise TypeError("div must be a number")
+                raise TypeError("matrix must be a matrix "
+                                "(list of lists) of integers/floats")
         new_matrix = []
         for row in matrix:
             modified_row = []
