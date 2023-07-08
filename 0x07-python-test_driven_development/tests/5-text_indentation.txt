@@ -1,4 +1,25 @@
 MY TEST CASES
 ===============
 
-text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation('')
+
+>>> text_indentation(10011010101101011010101101100)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("""Hello Julien. I'm trying my best: Isn't it? I hope to see you soon""")
+Hello Julien.
+<BLANKLINE>
+I'm trying my best:
+<BLANKLINE>
+Isn't it?
+<BLANKLINE>
+I hope to see you soon
