@@ -17,13 +17,13 @@ def matrix_divided(matrix, div):
         Return:
             a new matrix whose value has been divided
     """
-    if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix "
-                        "(list of lists) of integers/floats")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix "
+                        "(list of lists) of integers/floats")
     for row in matrix:
         if not isinstance(row, list):
             raise TypeError("matrix must be a matrix "
@@ -34,4 +34,11 @@ def matrix_divided(matrix, div):
         for data in row:
             if not isinstance(data, (int, float)):
                 raise TypeError("div must be a number")
-    return [(list(map(lambda data: round(data / div, 2), row))) for row in matrix]
+        new_matrix = []
+        for row in matrix:
+            modified_row = []
+            for data in row:
+                new_data = round(data / div, 2)
+                modified_row.append(new_data)
+            new_matrix.append(modified_row)
+    return new_matrix
