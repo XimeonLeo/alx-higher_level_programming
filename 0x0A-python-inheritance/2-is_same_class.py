@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" A module that checks if an object is 
+""" A module that checks if an object is
     exactly an instance of the specified class
 """
 
 
 def is_same_class(obj, a_class):
-    """ Returns True if the object and class are of the same instance 
+    """ Returns True if the object and class are of the same instance
         Returns False if not
 
         Arguments:
