@@ -1,0 +1,53 @@
+MY TEST CASE FILE
+===================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> shape = BaseGeometry()
+
+>>> shape.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
+
+>>> shape.integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> shape.integer_validator(1)
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> shape.integer_validator("name")
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> shape.integer_validator("name", "leo")
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+>>> shape.integer_validator("age", 29)
+
+>>> shape.integer_validator("age", [2, 3])
+Traceback (most recent call last):
+	...
+TypeError: age must be an integer
+
+>>> shape.integer_validator("top", (2, 9))
+Traceback (most recent call last):
+	...
+TypeError: top must be an integer
+
+>>> shape.integer_validator("tse", {2, 0})
+Traceback (most recent call last):
+	...
+TypeError: tse must be an integer
+
+>>> shape.integer_validator("age", [2])
+Traceback (most recent call last):
+	...
+TypeError: age must be an integer
