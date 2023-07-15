@@ -8,7 +8,7 @@ def load_from_json_file(filename):
 
     Args:
         filename: the name containing the json str
-    
+
     Return:
             The python form of json
     """
