@@ -74,11 +74,15 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints the rectangle to stdout """
+        for down in range(self.__y):
+            print()
         for cm in range(self.area()):
+            if cm != 0 and cm % self.__width == 0:
+                print()
             if cm % self.__width == 0:
-                if cm != 0:
-                    print()
-            print('#', end='')
+                for side in range(self.__x):
+                    print(" ", end="")
+            print("#", end="")
         print()
 
     def __str__(self):
@@ -89,3 +93,28 @@ class Rectangle(Base):
         wit = self.__width
         hit = self.__height
         return f"[Rectangle] ({idd}) {xx}/{yy} - {wit}/{hit}"
+
+    def update(self, *args):
+        """ Assigns new value to each attributes
+
+        Args:
+                arg1 == id
+                arg2 == width
+                arg3 == height
+                arg4 = x
+                arg5 = y
+        """
+        i = 0
+        if args:
+            for arg in args:
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.__width = arg
+                elif i == 2:
+                    self.__height = arg
+                elif i == 3:
+                    self.__x = arg
+                elif i == 4:
+                    self.__y = arg
+                i += 1
