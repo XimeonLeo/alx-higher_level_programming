@@ -94,15 +94,18 @@ class Rectangle(Base):
         hit = self.__height
         return f"[Rectangle] ({idd}) {xx}/{yy} - {wit}/{hit}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Assigns new value to each attributes
 
         Args:
+                *args
                 arg1 == id
                 arg2 == width
                 arg3 == height
                 arg4 = x
                 arg5 = y
+
+                **kwargs: key and value
         """
         i = 0
         if args:
@@ -118,3 +121,24 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = arg
                 i += 1
+        else:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.__width = value
+                elif key == 'height':
+                    self.__height = value
+                elif key == 'x':
+                    self.__x = value
+                elif key == 'y':
+                    self.__y = value
+
+    def to_dictionary(self):
+        """ Returns all attributes of a Rectangle as a dict """
+        return {"id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y
+                }
