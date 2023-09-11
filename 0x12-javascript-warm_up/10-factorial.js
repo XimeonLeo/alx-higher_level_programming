@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 function factorial (dgt) {
   if ((dgt === 0) || isNaN(dgt)) {
     return 1;
