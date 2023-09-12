@@ -11,9 +11,12 @@ class Square extends Rectangle {
     if (c === undefined) {
       this.print();
     } else {
-      const symbol = c.repeat(this.height);
-      for (let i = 0; i < this.height; i++) {
-        console.log(symbol);
+      for (let j = 0; j < this.width; j++) {
+        let symb = '';
+        for (let i = 0; i < this.height; i++) {
+          symb += 'C';
+        }
+        console.log(symb);
       }
     }
   }
