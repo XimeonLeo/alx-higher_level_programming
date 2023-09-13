@@ -10,7 +10,7 @@ class Square extends _Square {
       for (let j = 0; j < this.width; j++) {
         let symb = '';
         for (let i = 0; i < this.height; i++) {
-          symb += 'C';
+          symb += c;
         }
         console.log(symb);
       }
