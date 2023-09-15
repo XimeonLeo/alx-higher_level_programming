@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     # Printing results
     if state is None:
-        print()
+        print("Nothing")
     else:
         print(f"{state.id}: {state.name}")
 
