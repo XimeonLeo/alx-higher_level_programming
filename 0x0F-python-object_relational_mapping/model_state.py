@@ -6,8 +6,14 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
-    """ Defines a clasa State that inherits from Base """
+    """ Defines a clasa State that inherits from Base
+
+        __tablename__: container for the table name State
+        id: the state's id
+        name: the state's name'
+    """
     __tablename__ = "states"
     id = Column(Integer, autoincrement=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
