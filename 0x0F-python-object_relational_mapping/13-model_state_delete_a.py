@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A module that modify a state object to State table in database
+""" A module that delete state object from State table in database
     hbtn_0e_6_usa7
 """
 import sys
@@ -26,8 +26,9 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the table
-    mod_state = session.query(State).filter(State.id == 2).first()
-    mod_state.name = "New Mexico"
+    query = session.query(State)
+    states = query.filter(State.name.like("%a%"))\
+                  .delete(synchronize_session='fetch')
     session.commit()
 
     # Closing session
