@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" A module that Poats an email to a url using rhe 
-    ewqueat module
+""" A module that Poats an email to a url using
+    request module
 """
 import requests
 import sys
