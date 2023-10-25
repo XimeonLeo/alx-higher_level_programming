@@ -2,16 +2,34 @@
 // prints the number of movies where the character
 // “Wedge Antilles” is present.
 
-const request = require('request');
-const url = process.argv[2];
-const character = 'https://swapi-api.alx-tools.com/api/people/18/';
+// const request = require('request');
+// const url = process.argv[2];
+// const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 
-request(url, (err, res, data) => {
-  if (err) {
-    console.error(err);
-    return;
+// request(url, (err, res, data) => {
+//  if (err) {
+//    console.error(err);
+//    return;
+//  }
+//  const movies = JSON.parse(data).results;
+//  const wedgeAntiles = movies.filter((movie) => movie.characters.includes(character));
+//  console.log(`${wedgeAntiles.length}`);
+// });
+const request = require('request');
+let nFilms = 0;
+
+request(process.argv[2], function (err, response, body) {
+  if (err == null) {
+    const resp = JSON.parse(body);
+    const results = resp.results;
+    for (let i = 0; i < results.length; i++) {
+      const characters = results[i].characters;
+      for (let j = 0; j < characters.length; j++) {
+        if (characters[j].search('18') > 0) {
+          nFilms++;
+        }
+      }
+    }
   }
-  const movies = JSON.parse(data).results;
-  const wedgeAntiles = movies.filter((movie) => movie.characters.includes(character));
-  console.log(`${wedgeAntiles.length}`);
+  console.log(nFilms);
 });
