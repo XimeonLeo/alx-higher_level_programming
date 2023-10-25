@@ -13,5 +13,5 @@ request(url, (err, res, data) => {
   }
   const movies = JSON.parse(data).results;
   const wedgeAntiles = movies.filter((movie) => movie.characters.includes(character));
-  console.log(`${wedgeAntiles.length}`)
-})
+  console.log(`${wedgeAntiles.length}`);
+});
