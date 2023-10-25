@@ -25,4 +25,3 @@ request.get(url, (err, res, body) => {
 
   console.log(completedDict);
 });
-
