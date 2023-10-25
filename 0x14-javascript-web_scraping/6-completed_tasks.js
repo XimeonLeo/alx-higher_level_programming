@@ -9,5 +9,6 @@ request.get(url, (err, res, body) => {
     console.error(err);
     return;
   }
-  console.log(body)
+  const completed = body.filter((dict) => dict.completed);
+  console.log(completed);
 })
