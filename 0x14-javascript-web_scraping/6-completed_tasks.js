@@ -12,5 +12,5 @@ request.get(url, (err, res, body) => {
   const todoList = JSON.parse(body);
   console.log(todoList);
   // const completed = body.filter((dict) => dict.completed);
-  console.log(completed);
+  // console.log(completed);
 })
