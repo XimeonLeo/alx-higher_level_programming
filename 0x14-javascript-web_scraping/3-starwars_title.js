@@ -9,8 +9,8 @@ const url = 'https://swapi-api.alx-tools.com/api/films/' + id;
 request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
-    return
+    return;
   }
   const movies = JSON.parse(body);
-  console.log(`${movies.title}`)
-})
+  console.log(`${movies.title}`);
+});
